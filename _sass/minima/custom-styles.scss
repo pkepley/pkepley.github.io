@@ -19,3 +19,8 @@ table {
   width: auto; 
   font-size: 0.75 * $base-font-size;
 }
+
+// Don't make blockquote text bigger than base text
+blockquote {
+    font-size: 0.95 * $base-font-size;
+}
