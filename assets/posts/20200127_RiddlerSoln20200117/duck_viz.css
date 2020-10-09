@@ -1,0 +1,31 @@
+.cell {
+    fill: none;
+    stroke: black;
+    fill-opacity: 0;    
+    stroke-width: 3;
+}
+
+.tile {
+    fill: none;
+    stroke-opacity: 1;
+    fill-opacity: 10%;
+    stroke: black;
+    stroke-width: 1;
+}
+
+.enter_tile_value {
+    fill: green;
+}
+
+.fixed_tile_value {
+    fill: black;
+    font-weight: bold;
+}
+
+.update_tile_value {
+    fill: black;
+}
+
+.exit_tile_value {
+    fill: red;
+}

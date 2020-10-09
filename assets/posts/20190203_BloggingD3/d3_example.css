@@ -1,0 +1,12 @@
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2;
+}
+
+.line2 {
+    fill: gray;
+    stroke: gray;
+    stroke-width: 0;
+    opacity : .30;
+}

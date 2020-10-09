@@ -1,18 +1,19 @@
 ---
 layout: page
 title: About
-permalink: /about/
+subtitle: 
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Paul Kepley, and the main purpose of this blog is to serve
+as a repository for notes with a focus on what I'm reading / learning
+about. Also, I'll probably work through some puzzle problems every now
+and then.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Here are some things you might want to know about me:
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+- I recently(ish) graduated with a PhD in Mathematics from [Purdue University](http://math.purdue.edu), and I did my undergrad studies at [Washington University in St. Louis](http://www.wustl.edu).
+- My graduate research focused on some topics related to the inverse boundary value problem for the wave equation.
+- I really enjoy programming in both Python and R. The Tidyverse (especially pipelining functions and ggplot2) have been very useful paradigms.
+- I dabble in the banjo and guitar.
+- I enjoy solving problems. I'm a pretty big fan of FiveThirtyEight's Riddler problems. I've really enjoyed the [Advent of Code](https://adventofcode.com/) the last couple years, and will occasionally play around with [Project Euler](https://projecteuler.net/) problems.
 
-
-[jekyll-organization]: https://github.com/jekyll

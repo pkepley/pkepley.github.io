@@ -1,0 +1,20 @@
+text {
+    font: bold 48px monospace;
+}
+
+.all_match {
+    fill: green;
+}
+
+
+.enter {
+    fill: black;
+}
+
+.update {
+  fill: black;
+}
+
+.exit {
+    fill: black;
+}
