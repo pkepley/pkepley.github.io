@@ -13,3 +13,9 @@
 }
 .main-pager .previous { float:left; }
 .main-pager .next { float:right; }
+
+// Don't make the table fill the row, make the font more reasonably sized
+table {
+  width: auto; 
+  font-size: 0.75 * $base-font-size;
+}
