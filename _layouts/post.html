@@ -30,6 +30,29 @@ layout: default
     {{ content }}
   </div>
 
+
+  {% if site.paginate %}
+
+  <div class="blog-pager">
+    {% if page.previous.url %}
+    <span class="previous">
+      <b>
+        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+      </b>
+    </span>
+    {% endif %}
+    {% if page.next.url %}
+    <span class="next">
+      <b>
+        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+      </b>
+    </span>
+    {% endif %}
+  </div>
+
+  {% endif %}
+  
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
