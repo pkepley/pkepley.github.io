@@ -1,2 +1,15 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+.blog-pager {
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+.blog-pager .previous { float:left; }
+.blog-pager .next { float:right; }
+
+.main-pager {
+    padding-top: 15px;
+    padding-bottom: 50px;
+}
+.main-pager .previous { float:left; }
+.main-pager .next { float:right; }
