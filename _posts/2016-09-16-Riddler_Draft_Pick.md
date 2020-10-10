@@ -22,7 +22,7 @@ work out the solution to the problem and then simulate my results as a
 sanity check.
 
 The code which generated this post can be found as a [Jupyter
-notebook](https://github.com/pkepley/Miscellaneous/blob/master/Puzzlers-538/2016-09-16-Riddler_Draft_Pick_Extra_Credit.ipynb).
+notebook](https://github.com/pkepley/blog-notebooks/blob/master/20160916_RiddlerSoln/2016-09-16-Riddler_Draft_Pick_Extra_Credit.ipynb).
 
 
 # The prompt: 
