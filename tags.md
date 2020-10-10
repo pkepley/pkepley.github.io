@@ -1,9 +1,14 @@
 ---
 layout: default
-title: Tags
+title: Posts by Tag
 ---
 
+<header class="tags-header">
+  <h1 class="tags-title" itemprop="name headline">{{ page.title | escape }}</h1>
+</header>
+
 <div class="tags-expo">
+  <h2> Tags </h2>
   <div class="tags-expo-list">
     {% for tag in site.tags %}
 	  {% assign tag_pretty = tag[0] | slugify | capitalize %}	
