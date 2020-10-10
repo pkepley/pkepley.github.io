@@ -6,6 +6,20 @@ layout: default
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
+      <!-- Begin Tag Stuff -->      
+      {% if page.tags.size > 0 %}      
+      <div class="tag-header">
+	<span>	
+	<b>Tags:</b>&nbsp;
+	{% for tag in page.tags %}
+	{% assign tag_pretty = tag | slugify | capitalize %}
+	{% if forloop.index > 1 %} | {% endif %}
+	<a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag_pretty }}" class="post-tag">{{ tag_pretty }}</a>
+	</span>
+	{% endfor %}
+      </div>
+      {% endif %}
+      <!-- End Tag Stuff -->      
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
@@ -23,10 +37,10 @@ layout: default
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
+	  {%- endif -%}</p>    
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody">    
     {{ content }}
   </div>
 

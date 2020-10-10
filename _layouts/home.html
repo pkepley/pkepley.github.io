@@ -33,28 +33,27 @@ layout: default
         </h3>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
-        {%- endif -%}
+        {%- endif -%}	
+        <!-- Begin Tag Stuff -->
+        {% if post.tags.size > 0 %}
+	  <b>Tags:</b> &nbsp;
+          {% for tag in post.tags %}
+	    {% assign tag_pretty = tag | slugify | capitalize %}		  
+            <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag_pretty }}" class="post-tag">
+              {{ tag_pretty }}
+            </a>
+	    {% if tag != post.tags.last %}
+	      &nbsp;|&nbsp;
+	    {% endif %}
+          {% endfor %}
+        {% endif %}
+        <!-- End Tag Stuff -->
       </li>
       {%- endfor -%}
     </ul>
 
+    <!-- Begin pagination stuff -->    
     {% if site.paginate %}
-      <!-- <div class="pager"> -->
-      <!--   <ul class="pagination"> -->
-      <!--   {%- if paginator.previous_page %} -->
-      <!--     <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li> -->
-      <!--   {%- else %} -->
-      <!--     <li><div class="pager-edge">•</div></li> -->
-      <!--   {%- endif %} -->
-      <!--     <li><div class="current-page">{{ paginator.page }}</div></li> -->
-      <!--   {%- if paginator.next_page %} -->
-      <!--     <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li> -->
-      <!--   {%- else %} -->
-      <!--     <li><div class="pager-edge">•</div></li> -->
-      <!--   {%- endif %} -->
-      <!--   </ul> -->
-      <!-- </div> -->
-
     {% if paginator.total_pages > 1 %}
     <div class="pager main-pager">
       {% if paginator.previous_page %}
@@ -72,9 +71,9 @@ layout: default
       </span>
       {% endif %}
     </div>
-    {% endif %}
-    
+    {% endif %}    
     {%- endif %}
+    <!-- End pagination stuff -->    
 
   {%- endif -%}
 
