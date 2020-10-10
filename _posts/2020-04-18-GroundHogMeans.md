@@ -86,7 +86,7 @@ display(HTML(legend.prettify()))
 ```
 
 <div style="font-size:8pt;">
-<table class="wikitable">
+<table class="wikitable" style="color: black;"> <!-- PK: Override for dark mode -->
  <tbody>
   <tr>
    <td colspan="7">
