@@ -116,9 +116,9 @@ locations and the Voronoi cell boundaries.
 ![Wendy's]({{ asset_path }}/McFarPoints_53_0.png)
 
 For the most part, it seems that if you want to get far away from fast
-food, you're going to want to go out to North-West near Canada. Or
-maybe it's just that OpenStreetMap has less coverage in those areas?
-Either way, here's a summary table of McFarthest points I found:
+food, you're going to want to go out North-West near Canada. Or maybe
+it's just that OpenStreetMap has less coverage in those areas?  Either
+way, here's a summary table of McFarthest points I found:
 
  Chain | Distance <br> (miles) | McFarthest Point <br> (lat, lon) | Nearest Store <br> (lat, lon) 
  ----------- | ---------------- | ---------------------------- | ------------------------ 
