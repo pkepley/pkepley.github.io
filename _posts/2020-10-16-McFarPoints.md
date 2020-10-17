@@ -92,7 +92,7 @@ $$ \{ d(v, s) : v \in \text{Vertices}(R_s), s \in S \} $$
 So an algorithm for computing McFarthest points looks like:
    1. Compute the Voronoi diagram for $$S$$.
    2. Compute distances $$d(v, s)$$ for all $$v \in R_s$$ and all $$s\in S$$.
-   3. Find $$v$$ for which $$d(v,s)$$ is largest for some $$s \in S$$.
+   3. Find $$v,s$$ for which $$d(v,s)$$ is largest. $$v$$ is the McFarthest point, and $$d(v,s)$$ is the max distance.
 
 As a practical aside, all distance computations need to be done using
 the *same* distance function. Specifically, you need to construct the
@@ -120,7 +120,7 @@ food, you're going to want to go out to North-West near Canada. Or
 maybe it's just that OpenStreetMap has less coverage in those areas?
 Either way, here's a summary table of McFarthest points I found:
 
- Chain | Distance <br> (Miles) | McFarthest Point <br> (lat, lon) | Nearest Store <br> (lat, lon) 
+ Chain | Distance <br> (miles) | McFarthest Point <br> (lat, lon) | Nearest Store <br> (lat, lon) 
  ----------- | ---------------- | ---------------------------- | ------------------------ 
  McDonald's  | 153.70 | (49.00, -100.04) | (47.93, -97.09)  
  Burger King | 280.45 | (49.00, -111.79) | (47.63, -117.54) 
