@@ -45,10 +45,10 @@ API](https://wiki.openstreetmap.org/wiki/Overpass_API)). Unfortunately,
 it seems that OpenStreetMap is missing most of the United States'
 McDonald's, since I was only able to find around 3,400 McDonald's in
 the continental US when there should be around 13,000. (On the other
-hand, my Overpass query *could* be incomplete). As a consequence of my
-dataset's incompleteness, the point that I found doesn't really align
-with the "true" McFarthest Spot. However, the distance scale is on the
-correct order of magnitude.
+hand, my Overpass query *could* be incomplete). Despite my dataset's 
+incompleteness, I was able to find a point that's pretty close to the "true" 
+McFarthest Spot. However, the distance to the nearest McDonald's that I 
+found is a bit further than the "true" distance.
 
 Throughout this post, I'll use the term "McFarthest point" as a
 short-hand for "the point in a region furthest away from a given fast
@@ -122,7 +122,7 @@ way, here's a summary table of McFarthest points I found:
 
  Chain | Distance <br> (miles) | McFarthest Point <br> (lat, lon) | Nearest Store <br> (lat, lon) 
  ----------- | ---------------- | ---------------------------- | ------------------------ 
- McDonald's  | 153.70 | (49.00, -100.04) | (47.93, -97.09)  
+ McDonald's  | 154.10 | (38.60,	-115.77) | (36.80, -114.10)
  Burger King | 280.45 | (49.00, -111.79) | (47.63, -117.54) 
  Wendy's     | 312.32 | (47.07, -67.79)  | (44.50, -73.12) 
 
@@ -137,13 +137,14 @@ The true McFarthest point currently sits in
 but it used to sit all the way up in 
 [South Dakota](http://www.datapointed.net/2009/09/distance-to-nearest-mcdonalds/). 
 This dramatic shift evidently stems from the closure of a single
-McDonald's store, so it's no surprise that I wasn't able to match the
-true McFarthest point with my very incomplete data. The computation of
-the McFarthest point is pretty sensitive to the data you use to compute it!
+McDonald's store, so it's a bit surprising that I was able to more or
+less match the true McFarthest point with my very incomplete data. The
+computation of the McFarthest point is fairly sensitive to the data that
+you use to compute it!
 
 To illustrate this sensitivity, I recomputed the nationwide McFarthest
 point with incomplete datasets of progressively increasing size,
-ranging from 3 to 3403 McDonald's locations. The results are plotted
+ranging from 3 to 3396 McDonald's locations. The results are plotted
 in the following animation.
 
 ![stability]({{ asset_path }}/mcfarthest_stability.gif)
@@ -174,4 +175,15 @@ hemisphere.
 [McDonalds_Locations.csv]({{ asset_path }}/McDonalds_Locations.csv) | [McDonalds_McFarthest.csv]({{ asset_path }}/McDonalds_McFarthest.csv)
 [Wendys_Locations.csv]({{ asset_path }}/Wendys_Locations.csv) | [Wendys_McFarthest.csv]({{ asset_path }}/Wendys_McFarthest.csv)
 
-Data represent locations found in Open Street Map data as of Sep, 21 2020.
+Data represent locations found in OpenStreetMap data as of Oct, 21 2020.
+
+
+## Edits
+**2020-10-21**: An earlier version of this post was unable to match
+the "true" McFarthest Spot, due evidently to incomplete
+data. Previously, I sourced data from a local installation of
+Overpass, however, I recomputed everything today using data sourced
+from the overpass-api.de. To my great surprise, my computation is now
+much more in-line with the location of the the "true" McFarthest spot
+&#128578;
+
