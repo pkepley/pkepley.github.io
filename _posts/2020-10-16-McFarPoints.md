@@ -46,9 +46,10 @@ it seems that OpenStreetMap is missing most of the United States'
 McDonald's, since I was only able to find around 3,400 McDonald's in
 the continental US when there should be around 13,000. (On the other
 hand, my Overpass query *could* be incomplete). Despite my dataset's 
-incompleteness, I was able to find a point that's pretty close to the "true" 
-McFarthest Spot. However, the distance to the nearest McDonald's that I 
-found is a bit further than the "true" distance.
+incompleteness, the McFarthest point that I found was pretty close to
+the "true" McFarthest Spot. On the other hand, my McFarthest point is
+slightly further away from a neighboring McDonald's than the "true"
+McFarthest spot.
 
 Throughout this post, I'll use the term "McFarthest point" as a
 short-hand for "the point in a region furthest away from a given fast
