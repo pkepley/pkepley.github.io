@@ -60,7 +60,7 @@ music for each of the 50 US states, which you can see and listen to
 averaged their audio files to produce a sort of HPI chorus for each
 census region, which you can find [here](#regional_hpi). Code to
 replicate the whole process is provided in this [git
-repository](https://github.com/pkepley/blog-notebooks/20201024_HPI_Chorus).
+repository](https://github.com/pkepley/blog-notebooks/tree/master/20201024_HPI_Chorus).
 
 [comment]: <> assign path for assets to avoid repeating myself
 {% assign asset_path = base | append: "/assets/posts/20201024_HPI_Chorus" %}
