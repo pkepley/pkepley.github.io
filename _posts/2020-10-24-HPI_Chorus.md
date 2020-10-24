@@ -5,9 +5,12 @@ title: HPI Chorus
 tag: [audio, d3, FRED]
 ---
 
-In this post, I'll look at the result of converting state-level
-Housing Price Indices into music for each of the 50 states. Also, I'll
-combine the HPI by region to get a sort of HPI chorus.
+Have you ever wondered what housing price indices would sound like if
+they were converted to music? Planet Money already answered that. But
+what if that music was *worse*? In this post, I'll look at the result
+of converting state-level Housing Price Indices into music for each of
+the 50 states. Also, I'll combine the HPI by region to get a sort of
+HPI chorus.
 
 ## Background
 Over the past few years, I've listened to a pretty good chunk of the
