@@ -170,7 +170,7 @@ Listening to the different regions (or reading the graphs), the
 Midwest and South tend to have a lower pitch than the West and
 Northeast, indicating that housing prices for states in these regions
 have generally increased less over time. Also, except for the Midwest,
-each region has at least one outlier state which has seen
-substantially greater growth in housing prices than the other states
-in the region. These outliers can be heard singing out above the rest
-in a slightly higher register than the others.
+each region has at least one outlier state which grew much more
+rapidly than the other states in the region. These outliers can be
+heard singing out above the rest in a slightly higher register than
+the others.
