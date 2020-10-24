@@ -1,0 +1,27 @@
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2;
+}
+
+.line2 {
+    fill: gray;
+    stroke: gray;
+    stroke-width: 0;
+    opacity : .30;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    vertical-align: top;
+    overflow: hiden;
+}
+
+.region-svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
