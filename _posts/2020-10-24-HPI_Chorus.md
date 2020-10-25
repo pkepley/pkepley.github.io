@@ -122,7 +122,7 @@ document.addEventListener('play', function(e){
 		</center>
 		<br>
 		<audio controls id="state_hpi_audio" preload="auto">
-			<source src="{{ asset_path }}/hpi_AL.mp3" type="audio/ogg" 
+			<source src="{{ asset_path }}/hpi_CA.mp3" type="audio/ogg" 
 				id="state_hpi_audio_source"/>
 				Your browser does not support the <code>audio</code> element.
 		</audio>
