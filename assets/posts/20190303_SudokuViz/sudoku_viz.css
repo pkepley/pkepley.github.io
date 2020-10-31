@@ -1,6 +1,6 @@
 .cell {
     fill: none;
-    stroke: black;
+    stroke: #E9E9E9;    
     fill-opacity: 0;    
     stroke-width: 3;
 }
@@ -9,21 +9,21 @@
     fill: none;
     stroke-opacity: 1;
     fill-opacity: 10%;
-    stroke: black;
+    stroke: #E9E9E9;
     stroke-width: 1;
 }
 
 .enter_tile_value {
-    fill: green;
+    fill: lime;
 }
 
 .fixed_tile_value {
-    fill: black;
+    fill: #E9E9E9;
     font-weight: bold;
 }
 
 .update_tile_value {
-    fill: black;
+    fill: #E9E9E9;
 }
 
 .exit_tile_value {
