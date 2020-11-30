@@ -22,7 +22,7 @@ The answer to this problem is different from what you might expect (I
 definitely did *not* anticipate it), however, this distribution isn't
 so interesting to look at. As such, I decided to consider the problem
 for an arbitrary number of guests, and to consider the following
-related questions:
+related problems:
 
 {:start="2"}
 2. How long should we expect the process to take, and how much more
@@ -30,7 +30,7 @@ related questions:
 3. How much longer should we expect the process to take if a given
    guest is the last person to receive the sauce?
   
-To answer these questions, I consider cranberry sauce passing as a
+To solve these problems, I consider cranberry sauce passing as a
 pair of discrete Markov processes. One process, the primary chain, is
 used to track the guests who have already been served, while the other
 process, the auxiliary chain, models how the sauce is passed before
@@ -40,7 +40,7 @@ Jupyter notebooks for my solutions can be found in this [github
 repository](https://github.com/pkepley/blog-notebooks/tree/master/20201129_RiddlerSoln1120). In
 one notebook
 ([`compute_analytical_solution.ipynb`](https://nbviewer.jupyter.org/github/pkepley/blog-notebooks/blob/master/20201129_RiddlerSoln1120/compute_analytical_solution.ipynb)),
-I provide solutions to questions 1-3 using some standard (and one less
+I provide solutions for Problems 1-3 using some standard (and one less
 standard) theoretical results about Markov chains with absorbing
 states. A second notebook
 ([`run_simulation.ipynb`](https://nbviewer.jupyter.org/github/pkepley/blog-notebooks/blob/master/20201129_RiddlerSoln1120/run_simulation.ipynb))
@@ -166,8 +166,8 @@ n_{\text{guests}} -1$$ to the terminal state corresponding to the
 final remaining guest occur with probability 1, and the cranberry
 passing process remains in these terminal states with probability 1.
 
-To get a feel for how this shakes out, you might want to refer to the
-[graph above](#six_guest_DAG), which indicates the transition
+To get a feel for how all of this shakes out, you might want to refer
+to the [graph above](#six_guest_DAG), which indicates the transition
 probabilities along the graph edges. I have intentionally suppressed
 self-loops for the terminal states, so you won't see those
 probabilities highlighted above (e.g. state $$1$$ should have a loop
@@ -180,10 +180,30 @@ transition matrix as a heat-map:
 Although I like the aesthetic of the heat-map a bit better, I think
 it's somewhat harder to parse than the other figure &#128578;
 
-## Solution Method for Question 1
+As a final note, to build the transition matrix, we have to assign an
+indexing for the states. Since it simplifies things a bit to have the
+terminal states in the bottom right hand portion of the transition
+matrix, we employ the following iterative procedure to index the
+states. To begin the indexing, we first assign the starting state
+$$(0,(0,0),1)$$ with an index of 1. Then, for each $$n > 1$$, we take
+the ordered list of states $$\Sigma_n$$ having $$n_\text{served} = n -
+1$$ and form $$\Sigma_{n+1}$$ by appending, for each $$S\in\Sigma_n$$,
+the left and then right dependent state for $$S$$ (where $$S'$$ is the
+left descendant of $$S$$ if $$S'$$ is reached from $$S$$ by passing to
+the left of the served interval, and is right descendant if it is
+reached by passing to the right). As a consequence of this
+construction, the terminal states (which correspond to
+$$n_\text{served} = n_\text{guests}$$) will end up on the lower-right
+most corner sub-matrix of $$P$$. Essentially, we index the set of
+states by snaking from top to bottom and left-to-right in the [graph
+depicted above](#six_guest_DAG).
 
-By construction, the transition matrix for the cranberry passing
-process has already been placed in canonical form (see
+
+## Solving Problem 1
+
+As discussed in the preceding section, by construction, the transition
+matrix for the cranberry passing process has already been placed in
+canonical form (see
 e.g. [Wikipedia](https://en.wikipedia.org/wiki/Absorbing_Markov_chain#Canonical_form)). That
 is,
 
@@ -204,13 +224,15 @@ $$ (I - Q) B = R$$
 
 Since the cranberry sauce passing process begins from state $$(0,
 (0,0), 1)$$, we need only to consider the row associated with this
-state from the matrix $$B$$.
+state from the matrix $$B$$, i.e. we need only consider the first row
+of $$B$$.
 
-## Solution Method for Questions 2 & 3
+## Solving Problems 2 & 3
 
-We will answer question 2, i.e. to compute the unconditioned mean
-number of passes, by first solving question 3, that is, by computing
-the mean number of passes conditioned on a specific guest being last.
+### Solving Problem 3
+We will solve Problem 2, to compute the unconditioned mean number of
+passes, by first solving Problem 3. That is, we begin by computing the
+mean number of passes conditioned on a specific guest being last.
 
 To that end, let $$k \neq 0$$ be one of the guests. We will compute
 the mean number of passes made, conditioned on $$k$$ receiving the
@@ -222,16 +244,16 @@ and summing the results together. Finally, we need only sum the path
 means together weighted by the conditional probability of each path
 given that $$k$$ is served last.
 
-That is, letting $$\Gamma$$ denote the set of paths from
+To begin, let $$\Gamma_k$$ denote the set of paths from
 $$(0,(0,0),1)$$ to $$k$$, i.e. 
 
-$$\Gamma = \{S_1, \ldots, S_\text{n_guests} : S_1 = (0,(0,0), 1),
+$$\Gamma_k = \{S_1, \ldots, S_\text{n_guests} : S_1 = (0,(0,0), 1),
 S_{n_\text{guests}} = k, P_{S_{t+1}S_{t}} > 0~\text{for $t
 = 1,\ldots,n_{guests}-1$} \}$$
 
 We can compute:
 
-$$E[N_\text{passes} | \text{$k$ is last}] = \sum_{\gamma \in \Gamma} E_\gamma[n_\text{passes}]\cdot P(\gamma | \text{$k$ is last})$$
+$$E[N_\text{passes} | \text{$k$ is last}] = \sum_{\gamma \in \Gamma_k} E_\gamma[n_\text{passes}]\cdot P(\gamma | \text{$k$ is last})$$
 
 where $$E_{\gamma}[n_\text{passes}] = \sum_{i=1}^{n_\text{guests}}
 E[N_{\text{passes}, S_i, S_{i+1}}]$$, and $$E[N_{\text{passes},
@@ -246,8 +268,8 @@ conditioned on this process starting on one edge and exiting from the
 near edge or far edge, depending on whether $$S_{i+1}$$ is the near or
 far edge from $$S_i$$. For the terminal transition (i.e. $$i =
 n_\text{guests}-1$$), we need the unconditioned mean number of steps
-until absorption when the process starts on one edge of a length
-$$n_\text{guests} - 1$$ interval instead.
+until absorption when the Drunkdard's walk starts on one edge of a
+length $$n_\text{guests} - 1$$ interval instead.
 
 The unconditioned expectation is easy to compute and follows from
 standard results about absorbing Markov chains applied to the
@@ -255,45 +277,49 @@ Drunkard's walk on an interval of length $$n_\text{guests}-1$$, see
 e.g. [Wikipedia's discussion on absorbing Markov
 Chains](https://en.wikipedia.org/wiki/Absorbing_Markov_chain#Expected_number_of_steps).
 The conditioned expectations for the non-terminal transitions are a
-bit trickier, but one can apply Theorem 1 [from this
+bit trickier, but to compute the mean number of steps in the cases
+when the Drunkard's walk terminates in either the near or far edge,
+one can apply Theorem 1 [from this
 paper](https://doi.org/10.1016/j.spl.2019.04.001) (which you can
 obtain
-[here](https://www.researchgate.net/publication/332384778_Applications_of_the_fundamental_matrix_to_mean_absorption_and_conditional_mean_absorption_problems))
-to compute the mean number of steps in the cases when the Drunkard's
-walk terminates in either the near or far edge. In any event, for both
-the unconditioned and conditioned means, one only needs to solve a
-linear system associated with the transition matrix for the
-appropriate finite Drunkard's walk.
+[here](https://www.researchgate.net/publication/332384778_Applications_of_the_fundamental_matrix_to_mean_absorption_and_conditional_mean_absorption_problems)). In
+any event, to compute either the unconditioned or conditioned means,
+one needs only to solve a linear system associated with the transition
+matrix for the appropriate finite Drunkard's walk.
 
 The only remaining component is the probability $$P(\gamma |\text{$k$
 is last})$$. Let $$\gamma = (S_1,\ldots,S_{n_\text{guests}})$$ be one
-of the paths in $$\Gamma$$. The unconditioned probability of
+of the paths in $$\Gamma_k$$. The unconditioned probability of
 $$\gamma$$ is simply $$P(\gamma) = \prod_{1}^{n_\text{guests} - 1}
-P_{S_iS_{i+1}}$$, and since $$\Gamma$$ contains all paths for which
+P_{S_iS_{i+1}}$$, and since $$\Gamma_k$$ contains all paths for which
 guest $$k$$ is served last, the conditioned probability can be
 obtained by
 
 $$P(\gamma | \text{$k$ is last}) = \frac{P(\gamma)}{\sum_{\alpha \in
-\Gamma} P(\alpha)}.$$
+\Gamma_k} P(\alpha)}.$$
 
 With this, we have all the required ingredients to compute
-$$E[N_\text{passes} |\text{$k$ is last}]$$. Note that this method
-*probably* isn't the simplest method possible, and that the set
-$$\Gamma$$ can be very large -- so implementing the calculation as
-described above is fairly computationally intensive.
+$$E[N_\text{passes} |\text{$k$ is last}]$$. 
 
+Note: I guess that the method I have oultined here *probably* isn't
+the simplest method possible. Moreover, the set $$\Gamma_k$$ can be
+very large, and likely should have near factorial growth -- so
+implementing the calculation as described above is fairly
+computationally intensive.
+
+### Solving Problem 2
 The only remaining question to answer is how to compute the
 unconditioned mean number of passes, which can be computed as follows:
 
 $$ E[N_\text{passes}] = \sum_{k=1}^{n_\text{guests} - 1} E[N_\text{passes} |\text{$k$ is last}] \cdot P(\text{$k$ is last})$$
 
-Essentially, to answer Question 2, we just combine the solutions for
-Questions 1 & 3.
+Essentially, to solve Problem 2, we just combine the solutions for
+Problems 1 & 3.
 
 ## Solutions for $$n_\text{guests} = 20$$
 
-### Solution to Question 1
-The following figures shows the solutions to Question 1 when
+### Solution to Problem 1
+The following figures shows the solutions to Problem 1 when
 $$n_\text{guests} = 20$$.
 
 ![]({{ asset_path }}/compute_analytical_solution_23_0.png)
@@ -309,7 +335,7 @@ that is the probability that guest $$k \neq 0$$ is served last is
 uniform across $$k$$, however I only checked $$n_\text{guests} \leq
 20$$ and my solution doesn't easily generalize.
 
-### Solution to Question 2
+### Solution to Problem 2
 The average number of passes was found to be 190. In fact, it appears
 that for any $$n_{\text{guests}}$$ the expected number of passes is
 $$\left(\begin{array}{c} n_\text{guests}\\ 2\end{array}\right) =
@@ -317,18 +343,18 @@ $$\left(\begin{array}{c} n_\text{guests}\\ 2\end{array}\right) =
 
 Since all $$n_\text{guests}$$ could be served in as few as
 $$n_\text{guests} -1$$ passes, we see that the cranberry passing
-process requires $$\frac{n_\text{guests - 1}}{2}\cdot 100\%$$ more
+process requires $$\frac{n_\text{guests} - 2}{2}\cdot 100\%$$ more
 passes than necessary. For 20 guests, we can expect to observe 900%
 more passes than is necessary!
 
 
-### Solution to Question 3
-The following figures shows the solutions to Question 2 when
+### Solution to Problem 3
+The following figures shows the solutions to Problem 2 when
 $$n_\text{guests} = 20$$.
 
 ![]({{ asset_path }}/compute_analytical_solution_31_0.png)
 
-Note that, unlike the probability discussed in Question 1, the
+Note that, unlike the probability discussed in Problem 1, the
 conditioned average number of passes behaves like one would
 expect. That is, if the furthest guest from the starting point (guest
 10) is served last, we can expect the process to terminate in around
@@ -344,18 +370,29 @@ and process inefficiency for $$n_\text{guests} = 2,\ldots,20$$.
 
 As mentioned above, it appears that that $$E[n_\text{passes}] =
 \frac{n_\text{guests} \cdot (n_\text{guests} - 1)}{2},$$ and that
-inefficiency behaves like $$\text{Inefficiency}(n_\text{guests}) = \frac{n_\text{guests - 1}}{2}\cdot 100\%$$.
+inefficiency behaves like $$\text{Inefficiency}(n_\text{guests}) = \frac{n_\text{guests} - 2}{2}\cdot 100\%$$.
 
 
-<!-- ## Validating Analytical Results via Simulation -->
-<!-- ![]({{ asset_path }}/run_simulation_7_0.png) -->
+## Validating Analytical Results via Simulation
 
-<!-- |![]({{ asset_path }}/run_simulation_6_0.png)|![]({{ asset_path }}/run_simulation_6_1.png)| -->
+As mentioned in the introduction, I performed a simple stochastic
+simulation of cranberry passing to validate my theoretical
+calculations. For this simulation, I directly simulated cranberry
+sauce passes until every guest had been served. Simulations were
+conducted for $$n_\text{guests}=2,\ldots,20$$ and for each
+$$n_\text{guests}$$ simulations were repeated $$10^6$$ times.
 
+Since there was a high degree of accuracy for the simulated metrics of
+interest (i.e. the probabilities for being last, the conditioned
+means, and the unconditioned means), I have only included aggregated
+comparisons. The following figures compare the mean absolute percent
+deviation (MAPE) between the theoretical and simulation results
+respectively for the probabilities and the simulated conditional
+means by number of guests.
 
-<!-- 
-![]({{ asset_path }}/compute_analytical_solution_19_1.png)
-![]({{ asset_path }}/compute_analytical_solution_30_0.png)
-![]({{ asset_path }}/compute_analytical_solution_22_0.png)
-![]({{ asset_path }}/compute_analytical_solution_21_0.png)
--->
+|![]({{ asset_path }}/run_simulation_6_0.png)|![]({{ asset_path }}/run_simulation_6_1.png)|
+
+The following figure compares the mean percent error between the
+simulated and theoretical mean number of passes.
+
+![]({{ asset_path }}/run_simulation_7_0.png)
