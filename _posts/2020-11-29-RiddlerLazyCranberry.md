@@ -195,8 +195,8 @@ reached by passing to the right). As a consequence of this
 construction, the terminal states (which correspond to
 $$n_\text{served} = n_\text{guests}$$) will end up on the lower-right
 most corner sub-matrix of $$P$$. Essentially, we index the set of
-states by snaking from top to bottom and left-to-right in the [graph
-depicted above](#six_guest_DAG).
+states by indexing each successive row left-to-right from
+top-to-bottom in the [graph depicted above](#six_guest_DAG).
 
 
 ## Solving Problem 1
