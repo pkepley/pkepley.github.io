@@ -86,10 +86,10 @@ enumerated counter-clockwise from guest $$0$$, so that guest $$1$$
 sits to the right of guest $$0$$, guest $$2$$ sits to the right of
 guest $$1$$ and so on. Letting $$n_{guests}$$ denote the number of
 guests, it follows that guest $$n_{guests} - 1$$ will be sitting to
-the left of guest $$0$$. The labeling scheme is illustrated in the
-following figure for a table with $$6$$ guests:
+the left of guest $$0$$. As an example, here's what the labeling
+scheme looks like for a table with $$6$$ guests:
 
-![six guest transition graph with labels]({{ asset_path }}/seating_six.png)
+![six guest table with labels]({{ asset_path }}/seating_six.png)
 
 
 To label the states of the cranberry passing Markov chain, we will use
