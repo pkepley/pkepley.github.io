@@ -1,0 +1,15 @@
+.alive {
+    fill: lime;
+    stroke-opacity: 1;
+    fill-opacity: 50%;
+    #stroke: #E9E9E9;
+    #stroke-width: 1;
+}
+
+.dead {
+    fill: black;
+    stroke-opacity: 1;
+    fill-opacity: 100%;
+    #stroke: #E9E9E9;
+    #stroke-width: 1;
+}
