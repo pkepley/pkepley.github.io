@@ -44,14 +44,14 @@ a finite grid with periodic boundary conditions:
 
 ## Banjo Auld-Lang Syne 🪕
 On a completely unrelated note, before we went out for New Year's last
-year, I spent a couple of minutes trying to pick out Auld Lang Syne on
-my banjo. I didn't manage to get it quite right at the time, and it's
-not the kind of song you'd think to play except on New Year's, so I
-kind of just left it at that. But, in the spirit of starting the New
-Year by reflecting on old projects, this year I managed to hammer
-something more complete out, which you can listen to below:
+year, I spent some time trying to pick out Auld Lang Syne on my
+banjo. I didn't manage to get it quite right at the time (and it's not
+the kind of song you'd think to mess around with except around New
+Year's) so I just kind of left it at that. However, in the spirit of
+starting out the New Year by reflecting on old projects, I sat down
+this year and hammered out something a bit more reasonable:
 
 <audio controls id="banjo_auld_lang_syne" preload="auto">
-<source src="{{ asset_path }}/banjo_auld_lang_syne_ish.mp3" type="audio/ogg"/>
-Your browser does not support the <code>audio</code> element.
+	<source src="{{ asset_path }}/banjo_auld_lang_syne_ish.mp3" type="audio/ogg"/>
+	Your browser does not support the <code>audio</code> element.
 </audio>

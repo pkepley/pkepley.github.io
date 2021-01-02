@@ -26,9 +26,10 @@ var svg = d3.select(".svg-container")
 var controls_div_buttons = d3.select(".svg-container")
     .append("div");
 
-// Select size    
-size_selector = controls_div_buttons.append("select");
+// Select size
+var drop_down_div = controls_div_buttons.append("div").text("Size: ");
 
+size_selector = drop_down_div.append("select");
 size_selector
 	.on("change", restart)    
 	.selectAll("option")
@@ -37,13 +38,12 @@ size_selector
 	.append("option")
 	.text((d) => d)
 	.attr("value", (d) => d);
-
 size_selector.property("selected", n_rows)
 	.property("value", n_rows)
 
 
 // Restart button
-controls_div_buttons.append("input")
+drop_down_div.append("input")
     .attr("type", "button")
     .attr("name", "restart")
     .attr("value", "Restart")
