@@ -42,7 +42,7 @@ a finite grid with periodic boundary conditions:
 <script src="{{ url }}/assets/posts/js/d3.v5.min.js"></script>
 <script src="{{ asset_path }}/life_display.js"></script>
 
-## Banjo Auld-Lang Syne 🪕
+## Banjo Auld Lang Syne 🪕
 On a completely unrelated note, before we went out for New Year's last
 year, I spent some time trying to pick out Auld Lang Syne on my
 banjo. I didn't manage to get it quite right at the time (and it's not
