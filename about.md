@@ -3,10 +3,12 @@ layout: page
 title: About
 subtitle: 
 ---
-
 <center> 
-<img src="{{ url }}/assets/PaulMask.jpg" width="250" height="250" /> </center> 
-<br>
+<div style="margin-bottom:20px; margin-top:-10px;">
+<img src="{{ url }}/assets/PaulMask.png" height="175px" width="175px"/> 
+</div>
+</center> 
+
 	
 Hi, I'm Paul. The main purpose of this blog is to serve as a
 repository for random projects that I'm playing around with.
