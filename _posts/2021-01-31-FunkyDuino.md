@@ -5,7 +5,7 @@ title: FunkyDuino
 tag: [Arduino]
 ---
 
-Funky Duino. Or, How I learned to stop worrying and built an annoying
+FunkyDuino. Or, How I learned to stop worrying and built an annoying
 Funky Town music box.
 
 ## Background
