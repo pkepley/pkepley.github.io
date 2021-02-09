@@ -57,7 +57,7 @@ the results for the wine bottle reconstruction
 
 In case you'd like to have a look at the scripts which were used to
 generate the results in this post, my code can be obtained
-[here](http://www.example.com).
+[here](https://github.com/pkepley/blog-notebooks/tree/master/20210208_TheScream).
 
 ## Reconstruction Procedure <a id="reconstruction_procedure"></a>
 To reconstruct the signal, you first need to throw away anything in
