@@ -20,7 +20,7 @@ created it...  with unsurprisingly mediocre results! 🙂
 Back in 2017, I was looking for a bottle of wine at my local
 Jewel-Osco when I ran across one called "Urlo (Scream)." I hadn't heard
 of this wine before, but its label stuck out to me because it seemed
-to show a graphical representation of somebody's scream:
+to show a graphical representation of a scream:
 
 <img src="{{img_path}}/urlo-scream.jpg" height=500/> 
 
@@ -38,14 +38,13 @@ the following recent Computerphile video:
 </div>
 
 In this video, they managed to get a fairly faithful reconstruction of
-an audio signal from a waveform image that they obtained from some
-audio for a Computerphile video. The reconstruction procedure that
-they used was pretty simple, and was explained fairly thoroughly. So,
-I figured I'd have a go at applying it to my wine bottle image, and
-implemented their procedure in Python.  As a sanity check (since I
-knew it worked pretty well for them), I ran my implementation against
-the same image that they used in the Computerphile video. The results
-for this image, as in the video, were pretty good. Knowing that my
+an audio signal from a waveform image which they made while editing
+some audio for a Computerphile video. Their reconstruction procedure
+is simple and explained fairly thoroughly in the video, so I couldn't
+resist implementing it in Python.  As a sanity check (since I knew it
+worked pretty well for them), I ran my implementation against the same
+image that they used in the Computerphile video. The results for this
+image, as in the video, were pretty good. Knowing that my
 implementation worked (more or less), I went back and applied it to my
 wine bottle image, and I got pretty mediocre results!
 
@@ -72,8 +71,8 @@ sample comes from the upper or lower series) to form a signal with
 twice the number of samples as the original image. This interleaving
 procedure introduces a high-frequency ringing into the reconstruction,
 so the signal needs to be smoothed a bit to remove high-frequency
-artifacts (which was done using a simple moving average). Finally, the
-signal needs to be up-sampled in order to produce a signal of a
+artifacts (this was done using a simple moving average). Finally, the
+signal needs to be up-sampled in order to produce a signal with a
 reasonable duration (this was accomplished through linear
 interpolation).
 
@@ -84,7 +83,7 @@ basically just taking the average of the upper and lower bound
 series. So, instead of interleaving, you could probably just take the
 average of the two bounds in each sample. If you did it this way, you
 *might* not have to smooth the signal to remove the ringing
-artifacts - although it may still be necessary!
+artifacts - but it may still be necessary!
 
 ## Sanity Checking With the Computerphile Audio <a id="computerphile_reconstruction"></a>
 
@@ -110,17 +109,17 @@ Your browser does not support the <code>audio</code> element.
 
 Although the audio speaks for itself (literally!), and demonstrates a
 reasonable recovery of the original signal, I also threw the `.wav`
-file into Audacity just to have a look at the signal I had
-recovered. Here's what the recovered waveform looked like in Audacity:
+file into Audacity to have a look at the signal I recovered. Here's
+what the recovered waveform looks like in Audacity:
 
 <img src="{{img_path}}/computerphile_audacity.png"/>
 
 At this point, we've gone full circle... we've taken a waveform image,
-turned it back into audio, and then generated a new wave form
-image. What if we iterated the process further? I guess we *could*
-repeat this process over and over again in order to produce
-progressively worse audio. I'm not feeling up to that, at least not
-today!  🙂
+turned it back into audio, and then generated a new wave form image
+from the reconstruction. What if we kept on going with this process? I
+guess we *could* repeat this process indefinitely in order to produce
+progressively worse audio... I just didn't have the motivation to do
+that today. 🙂
 
 ## Reconstructing the Wine Scream <a id="wine_reconstruction"></a>
 
@@ -159,12 +158,14 @@ images were created. The Computerphile image was created in
 high-resolution from a computer screen capture of a similar program to
 Audacity. As a result, this image has *most* of the acoustic signal
 present in it with only a bit of loss due to digitization. On the
-other hand, the wine bottle image was inked onto a wine bottle
-label. This result is a *very* lossy encoding which almost certainly
-removed the bulk of the high-frequency signal content, which is
-especially problematic for something like a scream! In addition, the
-wine bottle also had substantial curvature that I didn't bother to
-adjust for, which further distorted the signal.
+other hand, the scream signal was inked onto a wine bottle label. The
+result of that process is a *very* lossy encoding that almost
+certainly removed the bulk of the signal's high-frequency content.
+This is especially problematic for a signal like a scream, since it
+should almost certainly have non-trivial components in the higher
+pitch ranges!  In addition, the wine bottle had a substantial
+curvature that I didn't bother to adjust for, which further distorted
+the reconstructed signal.
 
 Even though the results were kind of disappointing (although I should
 have expected as much), I'm happy to at least have a vague idea of
