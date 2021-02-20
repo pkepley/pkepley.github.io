@@ -33,7 +33,7 @@ simpler projects for the Arduino, and the other night, I spent some
 time hard-coding the notes to Funky Town into it:
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z-enXiFsuAM" frameborder="0" allow="accelerometer; autoplay; clipboad-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z-enXiFsuAM" frameborder="0" allow="accelerometer; autoplay; clipboad-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="max-width:100%;"></iframe>
 </center>
 
 
