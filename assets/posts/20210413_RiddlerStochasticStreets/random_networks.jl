@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.1
+# v0.14.2
 
 using Markdown
 using InteractiveUtils
@@ -21,9 +21,9 @@ end
 md"""
 # Stochastic Streets Riddler Solution
 
-In this post, we'll solve the [Riddler Problem](https://fivethirtyeight.com/features/can-you-navigate-the-one-way-streets/) from April $9^{th}$ 2021.
+In this post, we'll solve the [Riddler Problem](https://fivethirtyeight.com/features/can-you-navigate-the-one-way-streets/) from April 9<sup>th</th> 2021.
 
-In this problem, we're asked to consider a square gridded city with randomly oriented one way streets, and asked if it's about the probability of being able to navigate from the upper left-hand corner of the city to the lower right-hand corner on the road network.
+In this problem, we're asked to consider a square gridded city with randomly oriented one way streets, and asked to determine the probability of being able to navigate from the upper left-hand corner of the city to the lower right-hand corner on the road network.
 
 In the original problem statement, we're asked to consider a city 2 blocks across by 2 blocks high... but I will consider cities of arbitrary size. In this notebook, I provide a simulation for arbitrary sized cities, and a lazy exact solution for small cities. 
 

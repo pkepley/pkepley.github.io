@@ -50,14 +50,14 @@ viewing <a href="{{ asset_path }}/random_networks.jl.html">here</a>.
 To begin with, lets take a look at a couple realizations of random street
 assignments for the $$2 \times 2$$ block / $$n = 3$$ case. In the first example,
 there is no path from home (labeled $$1$$) to work (labeled $$9$$). In the
-second example, you can get to work using the path `1 => 2 => 5 => 8 => 9`.
-Unfortunately, although you can get to work in this city, there isn't any way
-for you to get back home!
+second example, you can get to work using the path `1 => 2 => 5 => 8 => 9` or
+`1 => 2 => 5 => 6 => 9`. Unfortunately, although you can get to work in this city, 
+there isn't any way for you to get back home!
 
 <div>
     <center>
-        <img src="{{ asset_path }}/street_layout_example_1.png" width="250px">
-        <img src="{{ asset_path }}/street_layout_example_2.png" width="250px">
+        <img src="{{ asset_path }}/street_layout_example_1.png" width="275px">
+        <img src="{{ asset_path }}/street_layout_example_2.png" width="275px">
     </center> 
 </div>
 
@@ -79,9 +79,9 @@ The following table summarizes the results for small $$n$$, but you can obtain
 the complete output data set [here]("{{ asset_path }}/prob_path_sim_rslts.csv").
 
 |City Width | Probability Navigable |
-| 2         | 0.437285              |
-| 3         | 0.276792              |
-| 4         | 0.198974              |
+| 2         | 0.437949              |
+| 3         | 0.277747              |
+| 4         | 0.198520              |
 
 So, we see that the solution for $$n = 3$$ is around $$27.7\%$$.
 
