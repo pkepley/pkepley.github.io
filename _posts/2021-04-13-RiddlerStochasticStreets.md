@@ -75,8 +75,8 @@ home to work. The results are summarized in the following figure.
 <img src="{{ asset_path }}/prob_path.png"> 
 </center>
 
-The following table summarizes the results for small $$n$$, but you can obtain
-the complete output data set [here]("{{ asset_path }}/prob_path_sim_rslts.csv").
+The following table summarizes the results for small $$n$$, and the complete
+data set can be downloaded [here]({{ asset_path }}/prob_path_sim_rslts.csv).
 
 |City Width | Probability Navigable |
 | 2         | 0.437949              |
