@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: HPI Chorus
-tag: [audio, d3, FRED]
+tag: [sonification, audio, d3, FRED]
 ---
 
 Have you ever wondered what housing price indices would sound like if
