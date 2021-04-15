@@ -102,8 +102,8 @@ The following table shows the results:
 
 | City Size | Probability Navigable                       |
 | 2         | $$ 7 /  16 \approx 0.4375 $$                |
-| 3         | $$ 1,135 / 4,096 \approx 0.27588 $$         |
-| 4         | $$ 3,329,245 / 16,777,216  \approx 0.19802$$|
+| 3         | $$ 1,135 / 4,096 \approx 0.2771 $$          |
+| 4         | $$ 3,329,245 / 16,777,216  \approx 0.1984$$ |
 
 From the table, we see that for a $$2\times2$$ city (i.e. $$n = 3$$) there's
 about a $$27.7\%$$ chance that we'll be able to drive to work!
