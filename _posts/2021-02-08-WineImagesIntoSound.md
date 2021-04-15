@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Turning Wine Images Into Sound
+title: Recovering Sound From a Wine Bottle Label
 ---
 
 In this post, I follow a procedure from a recent episode of
