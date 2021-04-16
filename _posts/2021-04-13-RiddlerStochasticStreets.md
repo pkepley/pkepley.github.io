@@ -92,7 +92,8 @@ solution to this problem, so I decided to implement a *bad* solution - i.e. I
 just brute forced the answer. If the problem had asked for a slightly larger
 city, say a $$ 4 \times 4 $$ grid (i.e. $$n = 5$$) then this approach would
 *not* have been feasible. However, for cities of size $$n = 2,3,4$$ there are
-only $$2^4, 2^{12}$$, and $$2^{24} = 16,777,216$$ street layouts respectively[^1].
+only $$2^4, 2^{12}$$, and $$2^{24} = 16,777,216$$ street layouts
+respectively[^1], so these can all be easily brute-forced.
 
 To perform the computation, I followed largely the same steps that I discussed
 in the previous section. The only difference here, was that I looped over all
