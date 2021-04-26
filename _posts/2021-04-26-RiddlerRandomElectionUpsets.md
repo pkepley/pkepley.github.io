@@ -113,7 +113,7 @@ P(\text{upset}) &=&\int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} \left(1 
 \end{eqnarray}$$
 
 The first integral is equal to $$\frac{1}{2}\text{erfc}(0) = \frac{1}{2}$$. For
-the second integral, we apply formula 2 from section 4.3 of [this table of
+the second integral, we apply formula 2[^1] from section 4.3 of [this table of
 integrals involving error
 functions](https://nvlpubs.nist.gov/nistpubs/jres/73b/jresv73bn1p1_a1b.pdf) with
 $$a = \sigma_R/\sigma_E$$ and $$b = 1$$, to obtain:
@@ -160,3 +160,7 @@ Finally, I simulated the election from the prompt (with 20% early voters) 10
 million times to try to get a bit more accuracy from the simulation. This
 resulted in an estimate of $$P(\text{upset}_\text{prompt}) \approx 0.14759575$$,
 which agrees with the correct answer to four decimal places.
+
+
+## Footnotes
+[^1]: In the interest of self-containment, formula 2 from the linked article is: $$\int_0^\infty \text{erf}(ax)e^{-b^2x^2}\,dx = \frac{\sqrt{\pi}}{2b} - \frac{1}{b\sqrt{\pi}}\tan^{-1}\left(\frac{b}{a}\right)$$
