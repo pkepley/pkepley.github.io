@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.3
+# v0.14.2
 
 using Markdown
 using InteractiveUtils
@@ -49,16 +49,16 @@ where $\mu_R = 0.5n_R$, $\sigma_R = 0.5 \sqrt{n_R}$ and an analogous expressions
 
 An election upset will occur if candidate A wins the regular vote but loses the total vote, or if candidate A loses the regular vote and wins the total vote. Since both events occur with equal probability (since candidate A and B are interchangeable), it follows that
 
-$$P(\text{upset}) = 2 \cdot P(\text{A wins the regular vote} | \text{A loses the total vote}).$$
+$$P(\text{upset}) = 2 \cdot P(\text{A loses the total vote} \cap \text{A wins the regular vote}).$$
 
 We can then re-write this as,
 
 $$\begin{eqnarray}
-P(\text{upset}) &=& 2 \cdot P(\text{A wins the regular vote} | \text{A loses the total vote}) \\
-&=& 2 \cdot P(v_R > 0.5 \cdot n_R | v_T < 0.5 \cdot n_T)\\
-&=& 2 \cdot P(v_R > 0.5 \cdot n_R | v_E + v_R < 0.5 \cdot (n_E + n_R)) \\
-&=& 2 \cdot P(v_R > \mu_R | v_E + v_R < \mu_E+\mu_R) \\
-&=& 2 \cdot P(v_R > \mu_R | v_E < \mu_E + \mu_R - v_R). \\
+P(\text{upset}) &=& 2 \cdot P(\text{A wins the regular vote} \cap \text{A loses the total vote}) \\
+&=& 2 \cdot P(v_R > 0.5 \cdot n_R \text{ and }  v_T < 0.5 \cdot n_T)\\
+&=& 2 \cdot P(v_R > 0.5 \cdot n_R \text{ and } v_E + v_R < 0.5 \cdot (n_E + n_R)) \\
+&=& 2 \cdot P(v_R > \mu_R \text{ and } v_E + v_R < \mu_E+\mu_R) \\
+&=& 2 \cdot P(v_R > \mu_R \text{ and } v_E < \mu_E + \mu_R - v_R). \\
 \end{eqnarray}$$
 
 Here we have used the fact that candidate A wins a round of votes if $v > 0.5\cdot n$, and used the expressions for $\mu_R, \mu_E$ from above. 
@@ -178,9 +178,11 @@ plot(
 	hcat(prob_upset_exact, prob_upset_sim), 
 	label=["Exact" "Simulated"], 
 	legend=:bottomright,
+	linewidth=[5 2],
 	xlabel="Fraction of Early Voters",
 	ylabel="Probability of Election Upset",
-	title="Probability of Election Upset \nvs Fraction of Early Voters"
+	title="Probability of Election Upset \nvs Fraction of Early Voters",
+	size=(800,500)
 )
 
 
@@ -217,7 +219,7 @@ Setting the seed for reproducibility (but not selecting it to cherry-pick!), the
 # ╟─2383b70b-0693-4adf-99d4-9bcedec5d6cb
 # ╠═562b2637-ec4f-4be2-a525-09e83c6458fa
 # ╠═5f82ec16-38a7-4c44-aa5a-f76d18d521dd
-# ╟─b2346518-43b5-4c4d-9536-244514a4d5a3
+# ╠═b2346518-43b5-4c4d-9536-244514a4d5a3
 # ╟─06cdba4f-426d-47e5-a4c0-c35f9a41d547
 # ╟─4a8020c4-b9f4-4c22-8919-eb0f135b1725
 # ╟─e1bfd335-b818-4931-8e71-03b46c90c9ec
