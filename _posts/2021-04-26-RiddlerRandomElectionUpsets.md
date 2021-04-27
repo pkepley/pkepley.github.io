@@ -73,16 +73,16 @@ total vote, or if candidate A loses the regular vote and wins the total vote.
 Since both events occur with equal probability (since candidate A and B are
 interchangeable), it follows that
 
-$$P(\text{upset}) = 2 \cdot P(\text{A wins the regular vote} | \text{A loses the total vote}).$$
+$$P(\text{upset}) = 2 \cdot P(\text{A loses the total vote} \cap \text{A wins the regular vote}).$$
 
 We can then re-write this as,
 
 $$\begin{eqnarray}
-P(\text{upset}) &=& 2 \cdot P(\text{A wins the regular vote} | \text{A loses the total vote}) \\
-&=& 2 \cdot P(v_R > 0.5 \cdot n_R | v_T < 0.5 \cdot n_T)\\
-&=& 2 \cdot P(v_R > 0.5 \cdot n_R | v_E + v_R < 0.5 \cdot (n_E + n_R)) \\
-&=& 2 \cdot P(v_R > \mu_R | v_E + v_R < \mu_E+\mu_R) \\
-&=& 2 \cdot P(v_R > \mu_R | v_E < \mu_E + \mu_R - v_R). \\
+P(\text{upset}) &=& 2 \cdot P(\text{A wins the regular vote} \cap \text{A loses the total vote}) \\
+&=& 2 \cdot P(v_R > 0.5 \cdot n_R \text{ and }  v_T < 0.5 \cdot n_T)\\
+&=& 2 \cdot P(v_R > 0.5 \cdot n_R \text{ and } v_E + v_R < 0.5 \cdot (n_E + n_R)) \\
+&=& 2 \cdot P(v_R > \mu_R \text{ and } v_E + v_R < \mu_E+\mu_R) \\
+&=& 2 \cdot P(v_R > \mu_R \text{ and } v_E < \mu_E + \mu_R - v_R). \\
 \end{eqnarray}$$
 
 Here we have used the fact that candidate A wins a round of votes if $$v >
