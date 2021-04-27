@@ -149,7 +149,7 @@ upset occurred.
 
 This process is repeated for 1001 evenly spaced early voter share fractions in [0,1], and the result is then compared (graphically) against the analytical solution.
 
-<img src="{{ asset_path }}/election_upset_probability.png">
+<img src="{{ asset_path }}/election_upset_probability.svg">
 
 The above figure shows great agreement between the exact solution discussed
 above and the simulation results -- so I'd wager that my exact solution is
