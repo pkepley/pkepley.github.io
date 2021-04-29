@@ -28,7 +28,7 @@ report the solution for the prompt as a special case.
 I've made the script for my solution available, so if you want to reproduce the
 results, you can download the Pluto notebook (written in Julia) <a href="{{
 asset_path }}/random_elections.jl">here.</a> I have also rendered the notebook
-output statically for viewing <a href="{{ asset_path
+statically for viewing <a href="{{ asset_path
 }}/random_elections.jl.html">here</a>.
 
 ## Analytical Solution
@@ -50,8 +50,8 @@ total number of votes for candidate A is distributed as $$v_\text{T} \sim
 regular and early voter sub-populations. That is,
 
 $$\begin{array}{ccl}
-v_R &\sim& \text{Binomial}(n_R,~0.5). \\
-v_E &\sim& \text{Binomial}(n_E,~0.5), \\
+v_R &\sim& \text{Binomial}(n_R,~0.5), \\
+v_E &\sim& \text{Binomial}(n_E,~0.5). \\
 \end{array}$$
 
 The prompt tells us that the population is "large," which is a hint that we
@@ -101,15 +101,15 @@ managed to find in a table of integrals 🙂. To that end, we make the
 substitution $$w_R = \frac{v_R-\mu_R}{\sigma_R\sqrt{2}}$$, $$w_E = \frac{v_E
 -\mu_E}{\sigma_E\sqrt{2}}$$, which (after some book-keeping) yields:
 
-$$P(\text{upset}) = 2 \cdot \int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} \int_{-\infty}^{-\frac{\sigma_R}{\sigma_E}w_R}\,dw_E \frac{e^{-w_E^2}}{\sqrt{\pi}}$$
+$$P(\text{upset}) = 2 \cdot \int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} \int_{-\infty}^{-\frac{\sigma_R}{\sigma_E}w_R}\,dw_E \frac{e^{-w_E^2}}{\sqrt{\pi}}.$$
 
 Next, we recall that $$\text{erfc}(x) = \frac{2}{\sqrt{\pi}} \int_x^\infty
-e^{-t^2}\,dt$$, and that $$\text{erf}(x) = 1 - \text{erfc}(x)$$ so the above can
-be written:
+e^{-t^2}\,dt = \frac{2}{\sqrt{\pi}} \int_{-\infty}^{-x} e^{-t^2}\,dt$$, and that
+$$\text{erf}(x) = 1 - \text{erfc}(x)$$, so the expression above can be re-written as:
 
 $$\begin{eqnarray}
 P(\text{upset}) &=&\int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} \left(1 - \text{erf}(\frac{\sigma_R}{\sigma_E}w_R)\right)\\
-&=&\int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} - \frac{1}{\sqrt{\pi}} \cdot \int_{0}^\infty\,dw_R~e^{-w_R^2} \cdot \text{erf}(\frac{\sigma_R}{\sigma_E}w_R)
+&=&\int_{0}^\infty \,dw_R \frac{e^{-w_R^2}}{\sqrt{\pi}} - \frac{1}{\sqrt{\pi}} \cdot \int_{0}^\infty\,dw_R~e^{-w_R^2} \cdot \text{erf}(\frac{\sigma_R}{\sigma_E}w_R).
 \end{eqnarray}$$
 
 The first integral is equal to $$\frac{1}{2}\text{erfc}(0) = \frac{1}{2}$$. For
@@ -120,20 +120,20 @@ $$a = \sigma_R/\sigma_E$$ and $$b = 1$$, to obtain:
 
 $$\begin{eqnarray}
 P(\text{upset})&=&\frac{1}{2} - \frac{1}{\sqrt{\pi}} \left[\frac{\sqrt{\pi}}{2} - \frac{1}{\sqrt{\pi}}\tan^{-1}\left(\frac{\sigma_E}{\sigma_R}\right)\right]\\
-&=&\frac{1}{\pi}\tan^{-1}\left(\frac{\sigma_E}{\sigma_R}\right)
+&=&\frac{1}{\pi}\tan^{-1}\left(\frac{\sigma_E}{\sigma_R}\right).
 \end{eqnarray}$$
 
 Finally, since $$\sigma_E = \sqrt{\frac{1}{2}f_E\cdot n_\text{total}}$$,
 $$\sigma_R = \sqrt{\frac{1}{2}f_R\cdot n_\text{total}}$$, and $$f_E + f_R = 1$$,
 we conclude that:
 
-$$\boxed{P(\text{upset})=\frac{1}{\pi}\tan^{-1}\left(\sqrt{\frac{f_E}{1-f_E}}\right)}$$
+$$\boxed{P(\text{upset})=\frac{1}{\pi}\tan^{-1}\left(\sqrt{\frac{f_E}{1-f_E}}\right).}$$
 
 ### Solution for the Prompt
-In particular, for the case outlined in prompt with $$f_E = 0.2$$, we find:
+For the special case in the prompt, with $$f_E = 0.2$$, we find:
 
 $$\boxed{P\left(\text{upset}_\text{prompt}\right) = \frac{1}{\pi}
-\tan^{-1}\left(\frac{1}{2}\right) \approx 0.14758}$$
+\tan^{-1}\left(\frac{1}{2}\right) \approx 0.14758.}$$
 
 
 ## Simulation Solution
