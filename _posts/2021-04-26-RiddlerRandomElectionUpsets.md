@@ -156,7 +156,7 @@ above and the simulation results -- so I'd wager that my exact solution is
 probably correct! 🙂
 
 ### Simulating the Prompt Solution
-Finally, I simulated the election from the prompt (with 20% early voters) 10
+Finally, I simulated the election from the prompt (with 20% early voters) 100
 million times to try to get a bit more accuracy from the simulation. This
 resulted in an estimate of $$P(\text{upset}_\text{prompt}) \approx 0.14759575$$,
 which agrees with the correct answer to four decimal places.
