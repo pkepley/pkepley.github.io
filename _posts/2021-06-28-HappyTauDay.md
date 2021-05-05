@@ -72,9 +72,6 @@ when they land across a grid line, otherwise they are colored gray.
   <div id="simulation_controls">
     <div id="n-needles-drop-down">Number of Needles: </div>
     <div id="needle-length-drop-down">Needle Length: </div>
-    <!-- <div id="needle-length-slider"> -->
-    <!--     <input type="range" min="0" max="100" value="100" class="slider" id="myRange"> -->
-    <!-- </div> -->
   </div>
   <div id="results_div"></div>
 </div>
