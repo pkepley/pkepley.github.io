@@ -1,0 +1,22 @@
+.background-viz {
+    #background-color: white;
+}
+
+.horizontal-line {
+    fill: none;
+    stroke: #4682b4;
+    stroke-width: 2;
+}
+
+.needle.hit {
+    stroke: red;
+    stroke-opacity: 1;
+    stroke-opacity: 100%;
+    stroke-width: 1.5;
+}
+
+.needle.miss {
+    stroke: silver;
+    stroke-opacity: 75%;
+    stroke-width: 1.5;
+}
