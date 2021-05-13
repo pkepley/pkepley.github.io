@@ -5,6 +5,11 @@ title: Dashboards
 
 Here are a few dashboards I have been maintaining:
 
+- [Weather Forecast Tracking Dashboard (Plotly+Dash)](https://paulkepley.com/weather-app/)<a id="dash-weather-app"></a><br> A weather forecast tracking dashboard built with Dash + Plotly. The data for this dashboard reflect actual measurements and forecasts for weather stations located at the largest airports in all 50 states. Data are pulled at midnight in each airport's local time-zone in multiple nightly cron-jobs, and are inserted into the SQLite database serving the dashboard. Batch jobs have been running nightly for this project since August 25<sup>th</sup> 2019. 
+
+  <span><svg class="svg-icon grey" style="vertical-align:-0.1875em"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> 
+  The repository for this dashboard can be [found here](https://github.com/pkepley/dash-weather-app/tree/main/src).</span>
+  
 - [COVID-19 Dashboard (Shiny)](https://pakepley.shinyapps.io/c19-dash/)<a id="old-covid-dashboard"></a><br> A COVID-19 tracking dashboard that I implemented in the early days of the pandemic. Data is refreshed every 12 hours from the [JHU CSSE COVID-19 repository](https://github.com/CSSEGISandData/COVID-19) from a cron-job running locally on a Raspberry Pi.  This dashboard is built with R+[Shiny](https://shiny.rstudio.com/), and is currently hosted on [shinyapps.io](https://www.shinyapps.io/).
 
   <span><svg class="svg-icon grey" style="vertical-align:-0.1875em"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> 
