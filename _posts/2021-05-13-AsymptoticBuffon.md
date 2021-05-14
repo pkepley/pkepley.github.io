@@ -1,19 +1,17 @@
 ---
 layout: post
-published: false
-title: Error Analysis in Buffon's Needle Problem (Happy Tau Day!)
+published: true
+title: Error Analysis in Buffon's Needle Problem 
 tag: [D3, Pi]
 ---
 
-Happy <strike>Pi</strike> Tau day! A few months back, I started writing a simple
-visualization in D3 to illustrate Buffon's needle problem for a post celebrating
-Pi Day. However, I was slow to finish and decided against publishing the post at
-that time. Since I didn't want to post it a few days late, and since I didn't
-want to wait until next year's Pi day in order to post it, I figured that Tau day (today,
-6/28) would be an equally good day for such a post, so I have included my
+A few months back, I started writing a simple
+visualization in D3 to illustrate Buffon's needle method for approximating $$\pi$$ in a post celebrating
+Pi Day. The visualization took a bit longer to complete than I had anticipated, so I ended up helving the post at that time. However, while playing with the simulation, I noticed that the approximations to $$\pi$$ from this method aren't especially good. To quantify just *how bad* this approximation is, I worked out an asymptotic error analysis of this estimator. In this post,
+ I have included my
 earlier visualization along with some simulation results and an error analysis
 of estimating $$\pi$$ using the Buffon method. For good measure, I also ran a
-simulation study in Julia 🙂
+Monte Carlo study of the error in Julia 🙂
 
 [comment]: <> assign path for assets to avoid repeating myself
 {% assign asset_path = base | append: "/assets/posts/20210628_HappyTauDay" %}
@@ -22,16 +20,16 @@ simulation study in Julia 🙂
 ## Introduction 
 When I was a junior in high school, I was assigned do some sort of project about
 $$\pi$$ for Pi day. As you might be able to guess from the preceding sentence, I
-can't really remember *what* the assignment entailed, but I do remember reading
+can't really remember *what* the assignment invovled, but I *do* remember reading
 Petr Beckman's [A History of Pi](https://us.macmillan.com/books/9780312381851)
 for my presentation. This book describes the history of $$\pi$$ and provides
-several interesting methods that have been used in the past to estimate $$\pi$$.
-One fun method that this book discusses is [Buffon's Needle
+several interesting methods that have been used in the past to estimate it. 
+One fun method discussed in this book, is [Buffon's Needle
 Problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem), which is a
 Monte Carlo method for estimating $$\pi$$ that essentially boils down to
 dropping needles over a regular grid and counting how many of them fall across
 horizontal grid lines. With some time, graph paper, and needles, you could
-simulate this process by hand, but since I don't have the patience for that, I
+simulate this process by hand. Since I didn't have the patience for that, I
 decided to <strike>quickly</strike> write up a visualization of the process,
 which you can find [below](#visualization). The simulation requires a fairly
 large number of needles in order to provide a decent estimation of $$\pi$$, so
@@ -40,19 +38,17 @@ needles by hand.
 
 If you play around with the visualization a bit, you should begin to get a sense
 that this isn't a very good way to estimate $$\pi$$. Or, at least, I got that
-sense after clicking the button a lot of times. This got me thinking... I knew
-that the estimate was bad, but just *how bad* is it? So I set out to quantify
-the behavior of the error estimate in Buffon's needle problem. This can be found
-below the visualization (but if you just can't wait, you can jump to it by
-clicking [here](#error-analysis)). In this section, I derive an bound on the
-error which holds with a prescribed level of confidence (i.e. it's a
-probablistic error bound).
+sense after clicking the button a lot of times while testing out the visualization. This got me thinking. The estimate was bad, but just *how bad* was it? With this in mind, I sat down and quantified
+the behavior of the error estimate in Buffon's needle problem. The results can be found
+in this post, below the visualization (if you just can't wait, you can jump to it by
+clicking [here](#error-analysis)). In that section, I derive an bound on the
+error which holds with a prescribed level of confidence. 
 
-Because I often don't trust my math, I decided I'd run a simulation study to
+Because I often like to validate my math, I decided that I'd run a simulation study to
 verify my error bound. I performed the simulation study in Julia, and have made
 the code and data available [on
 github](https://github.com/pkepley/blog-notebooks/tree/master/20210628_HappyTauDay).
-Direct links are also provided below. If you're just interested in how the simulation compares with the theoertical bounds, you can jump to the results [here](#simulation-study).
+Direct links are also provided below. If you're just interested in how the simulation compares with the theoertical bounds, then you can jump directly to the results [here](#simulation-study).
 
 
 ## Visualization <a id="visualization"></a>
