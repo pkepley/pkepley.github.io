@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Error Analysis in Buffon's Needle Problem 
+title: Analyzing Error in Buffon's Needle Problem 
 tag: [D3, Pi]
 ---
 
