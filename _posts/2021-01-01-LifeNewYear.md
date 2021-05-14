@@ -1,6 +1,7 @@
 ---
 layout: post
 published: true
+hidden: true
 title: Life in the New Year
 tag: [D3, Banjo, Audio]
 ---

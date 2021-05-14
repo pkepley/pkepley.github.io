@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: FunkyDuino
+hidden: true
 tag: [Arduino]
 ---
 

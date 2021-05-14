@@ -1,6 +1,7 @@
 ---
 layout: post
 published: true
+hidden: true
 title: Recovering Sound From a Wine Bottle Label
 ---
 
