@@ -5,13 +5,15 @@ title: Error Analysis in Buffon's Needle Problem
 tag: [D3, Pi]
 ---
 
-A few months back, I started writing a simple
-visualization in D3 to illustrate Buffon's needle method for approximating $$\pi$$ in a post celebrating
-Pi Day. The visualization took a bit longer to complete than I had anticipated, so I ended up helving the post at that time. However, while playing with the simulation, I noticed that the approximations to $$\pi$$ from this method aren't especially good. To quantify just *how bad* this approximation is, I worked out an asymptotic error analysis of this estimator. In this post,
- I have included my
-earlier visualization along with some simulation results and an error analysis
-of estimating $$\pi$$ using the Buffon method. For good measure, I also ran a
-Monte Carlo study of the error in Julia 🙂
+A few months back, I began writing up a simple visualization in D3 to illustrate
+Buffon's needle method for approximating $$\pi$$ for a post celebrating Pi Day.
+The visualization took me a bit longer to complete than I had anticipated, so I
+ended up shelving the post at that time. However, while playing with the
+simulation, I noticed that the approximations to $$\pi$$ from this method aren't
+especially good. To quantify just *how bad* this approximation is, I worked out
+an asymptotic error analysis of this estimator. In this post, I have included my
+the completed visualization, along with the error analysis. For good measure, I
+also ran a Monte Carlo study of the error in Julia 🙂
 
 [comment]: <> assign path for assets to avoid repeating myself
 {% assign asset_path = base | append: "/assets/posts/20210628_HappyTauDay" %}
