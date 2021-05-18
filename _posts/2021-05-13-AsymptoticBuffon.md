@@ -12,7 +12,7 @@ ended up shelving the post at that time. However, while playing with the
 simulation, I noticed that the approximations to $$\pi$$ from this method aren't
 especially good. To quantify just *how bad* this approximation is, I worked out
 an asymptotic error analysis of this estimator. In this post, I have included my
-the completed visualization, along with the error analysis. For good measure, I
+completed visualization, along with the error analysis. For good measure, I
 also ran a Monte Carlo study of the error in Julia 🙂
 
 [comment]: <> assign path for assets to avoid repeating myself
