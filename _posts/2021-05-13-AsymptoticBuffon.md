@@ -12,7 +12,7 @@ ended up shelving the post at that time. However, while playing with the
 simulation, I noticed that the approximations to $$\pi$$ from this method aren't
 especially good. To quantify just *how bad* this approximation is, I worked out
 an asymptotic error analysis of this estimator. In this post, I have included my
-completed visualization, along with the error analysis. For good measure, I
+completed visualization along with the error analysis. For good measure, I
 also ran a Monte Carlo study of the error in Julia 🙂
 
 [comment]: <> assign path for assets to avoid repeating myself
@@ -22,11 +22,11 @@ also ran a Monte Carlo study of the error in Julia 🙂
 ## Introduction 
 When I was a junior in high school, I was assigned do some sort of project about
 $$\pi$$ for Pi day. As you might be able to guess from the preceding sentence, I
-can't really remember *what* the assignment invovled, but I *do* remember reading
+can't really remember *what* the assignment involved, but I *do* remember reading
 Petr Beckman's [A History of Pi](https://us.macmillan.com/books/9780312381851)
 for my presentation. This book describes the history of $$\pi$$ and provides
 several interesting methods that have been used in the past to estimate it. 
-One fun method discussed in this book, is [Buffon's Needle
+One fun method discussed in this book is [Buffon's Needle
 Problem](https://en.wikipedia.org/wiki/Buffon%27s_needle_problem), which is a
 Monte Carlo method for estimating $$\pi$$ that essentially boils down to
 dropping needles over a regular grid and counting how many of them fall across
@@ -40,17 +40,19 @@ needles by hand.
 
 If you play around with the visualization a bit, you should begin to get a sense
 that this isn't a very good way to estimate $$\pi$$. Or, at least, I got that
-sense after clicking the button a lot of times while testing out the visualization. This got me thinking. The estimate was bad, but just *how bad* was it? With this in mind, I sat down and quantified
-the behavior of the error estimate in Buffon's needle problem. The results can be found
-in this post, below the visualization (if you just can't wait, you can jump to it by
-clicking [here](#error-analysis)). In that section, I derive an bound on the
-error which holds with a prescribed level of confidence. 
+sense after clicking the button a lot of times while testing out the
+visualization. This got me thinking. The estimate was definitely bad, but *how
+bad* was it? To answer this obviously important question, I sat down and derived
+the behavior of the error estimate. The results can be found in this post, below
+the visualization (if you can't wait, you can jump to it
+[here](#error-analysis)). There, I derive a bound on the error which holds with
+a prescribed level of confidence.
 
 Because I often like to validate my math, I decided that I'd run a simulation study to
 verify my error bound. I performed the simulation study in Julia, and have made
 the code and data available [on
 github](https://github.com/pkepley/blog-notebooks/tree/master/20210628_HappyTauDay).
-Direct links are also provided below. If you're just interested in how the simulation compares with the theoertical bounds, then you can jump directly to the results [here](#simulation-study).
+Direct links are also provided below. If you're just interested in how the simulation compares with the theoretical bounds, then you can jump directly to the results [here](#simulation-study).
 
 
 ## Visualization <a id="visualization"></a>
@@ -246,7 +248,7 @@ lines, while the observed data are plotted as circles.
 The agreement is generally better with more data (which is unsurprising), but
 overall, the agreement with the theoretical results is pretty good. 🙂
 
-Finally, since we Buffon's needle problem is interested in estimating $$\pi$$ --
+Finally, since Buffon's needle problem is interested in estimating $$\pi$$ --
 and since I have mostly focused on the error in this method instead -- I thought
 it might be fun to take a look at the the empirical distribution of
 $$\hat{\pi}$$ for one of my experimental setups. The following figure shows how
