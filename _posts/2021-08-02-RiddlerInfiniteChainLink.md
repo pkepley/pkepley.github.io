@@ -60,7 +60,8 @@ is shown in green, while the exact solution derived below is shown in purple).
 The animation was made interactively using Julia in a Pluto notebook. To run the
 code on your machine, you can download the notebook [here]({{
 asset_path}}/chain.jl). A static version can be found
-[here]({{asset_path}}/chain.jl.html).
+[here]({{asset_path}}/chain.jl.html), which can be executed interacively [on
+binder](https://binder.plutojl.org/v0.15.1/open?url=https%253A%252F%252Fwww.paulkepley.com%252Fassets%252Fposts%252F20210802_RiddlerInfiniteChainLink%252Fchain.jl.html).
 
 ## Deriving an Expression for the Chain's Tail
 Let $$p_n$$ denote the vertices along the chain. By assumption, the first vertex
@@ -158,7 +159,7 @@ the function $$z \mapsto \frac{1}{1 - fz}$$ happens to be a [Möbius
 transformation](https://en.wikipedia.org/wiki/M%C3%B6bius_transformation) of the
 complex plane. Since Möbius transformations [preserve "generalized
 circles"](https://en.wikipedia.org/wiki/M%C3%B6bius_transformation#Preservation_of_angles_and_generalized_circles),
-it follows that the image of $$\gamma$$ is either a circle $$\theta \mapsto
-e^{i\theta}$$ or a line. Since $$\gamma$$ clearly isn't a line (just consider
+it follows that the image of $$\theta \mapsto e^{i\theta}$$ under $$\gamma$$ is
+either a circle or a line. Since $$\gamma$$ clearly isn't a line (just consider
 the real and imaginary coordinate functions), we can conclude that the image of
 $$\gamma$$ is a circle.
