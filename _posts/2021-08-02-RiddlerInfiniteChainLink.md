@@ -33,7 +33,7 @@ $$\angle(\text{link}_n, \text{link}_{n+1}) = \theta$$ for all $$n$$). The
 following figure illustrates the first few links of such a chain:
 
 <center>
-<img src="{{ asset_path }}/chain_demonstration.png" height="275px" width="auto">
+<img src="{{ asset_path }}/chain_demonstration.png" height="300px" width="auto" style="margin-bottom: 20px;">
 </center>
 
 Since $$f < 1$$, the chain has a finite length. Assuming that the chain starts
