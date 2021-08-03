@@ -62,7 +62,7 @@ indistinguishable from the exact solution shown in purple).
 The animation was made interactively using Julia in a Pluto notebook. To run the
 code on your machine, you can download the notebook [here]({{
 asset_path}}/chain.jl). A static version can be found
-[here]({{asset_path}}/chain.jl.html), which can be executed interacively [on
+[here]({{asset_path}}/chain.jl.html), which can be executed interactively [on
 binder](https://binder.plutojl.org/v0.15.1/open?url=https%253A%252F%252Fwww.paulkepley.com%252Fassets%252Fposts%252F20210802_RiddlerInfiniteChainLink%252Fchain.jl).
 
 ## Deriving an Expression for the Chain's Tail
@@ -78,7 +78,7 @@ this, we see:
 $$\Delta p_n(\theta) = f^{n} \cdot \left(\cos(n\theta),~\sin(n\theta)\right).$$
 
 Since $$p_0 = (0,0)$$, the position of the $$n^{th}$$ link is given by $$p_n =
-\sum_{k=0}^{\infty} \Delta p_k$$. As such, the positino of the chain's tail is
+\sum_{k=0}^{\infty} \Delta p_k$$. As such, the position of the chain's tail is
 given by the infinite sum:
 
 $$\gamma(\theta) = \sum_{n=0}^{\infty} \Delta p_n(\theta).$$
