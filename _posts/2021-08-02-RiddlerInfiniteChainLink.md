@@ -44,10 +44,9 @@ In this post, I'll show that the chain traces out a circle whose center and
 radius depend upon the scaling fraction $$f$$.
 
 ## Animation
-Before we get show that the chain's free end traces out a circle, I thought it
-would be helpful to take a look at an animated illustration of the problem. The
-following figure shows the behavior of a finite approximation to the chain
-described in the problem:
+Before we show that the chain's free end traces out a circle, I thought it would
+be helpful to take a look at an animation of the problem. The following figure
+shows the behavior of a finite approximation to the chain as we vary $$\theta$$:
 
 <center>
 <img src="{{ asset_path }}/chain_animation.gif" style="margin-bottom: 20px;"> 
@@ -67,13 +66,14 @@ binder](https://binder.plutojl.org/v0.15.1/open?url=https%253A%252F%252Fwww.paul
 
 ## Deriving an Expression for the Chain's Tail
 Let $$p_n$$ denote the vertices along the chain. By assumption, the first vertex
-is constrained at the origin, so that $$p_0 = (0, 0)$$. As mentioned above, the
-$$n^{th}$$ link has length $$\ell_n = f^{n}$$ for $$n=0,1,\ldots$$ Let $$\Delta
-p_{n}$$ denote the vector $$\Delta p_n = p_{n+1} - p_{n}$$. Since each
-successive link is oriented at angle $$\theta$$ relative to the previous link,
-and since the chain starts out parallel to the horizontal, the $$n^{th}$$ link
-will be oriented at angle $$n \cdot \theta$$ relative to the horizontal. From
-this, we see:
+is constrained at the origin, so that $$p_0 = (0, 0)$$. Since the lengths
+$$\ell_n$$ of the chain's links satisfiy the recurrence relation $$\ell_{n+1} =
+f\ell_n$$ and $$\ell_0 = 1$$, it follows that $$\ell_n = f^{n}$$ for
+$$n=0,1,\ldots$$ Next, let $$\Delta p_{n}$$ denote the vector $$\Delta p_n = p_{n+1} -
+p_{n}$$. Since each successive link is oriented at angle $$\theta$$ relative to
+the previous link, and since the chain starts out parallel to the horizontal,
+the $$n^{th}$$ link will be oriented at angle $$n \cdot \theta$$ relative to the
+horizontal. From this, we see:
 
 $$\Delta p_n(\theta) = f^{n} \cdot \left(\cos(n\theta),~\sin(n\theta)\right).$$
 
@@ -92,11 +92,9 @@ author came up with the problem! That being said, because it's often easier to
 work with complex Fourier series than to work with sine and cosine series,
 noticing that $$\gamma$$ was described by a Fourier series prompted me to
 transition from thinking about the problem as a planar geometry problem, and to
-start thinking about it in terms of complex valued functions -- which
-ultimately made the problem a lot easier!
-
-To that end, we now identify $$(x,y) \leftrightarrow z = x+iy$$ and proceed in
-polar form.
+start thinking about it in terms of complex valued functions -- which ultimately
+made the problem a lot easier! With this in mind, we now identify $$(x,y)
+\leftrightarrow z = x+iy$$ and proceed in polar form.
 
 $$ 
 \begin{eqnarray}
@@ -120,8 +118,9 @@ $$
 Here, I have used the expression for the sum of a convergent geometric series on
 the third line, and on the last line, I have used WolframAlpha (since I was
 feeling lazy 🙂). This last formula is harder to work with than the formula on
-the second to last line (so I won't work with it), however, the last formula does
-provide some useful insight (and it's also pretty useful for plotting).
+the second to last line, so we'll mostly focus on the penultimate formula. On
+the other hand, the last formula does provide some useful insight, as well as
+being fairly useful for plotting.
 
 ## Showing That the Image of $$\gamma$$ is a Circle
 Although it's not immediately clear from the expressions above, the curve
@@ -135,7 +134,7 @@ that end, notice that
 $$\text{Real}\{\gamma\}(\theta) = \frac{1 - f\cos(\theta)}{f^2 -
 2f\cos(\theta) + 1} = \frac{1}{1 + f\cos(\theta)}$$
 
-so the real part of $$\gamma$$ is largest when $$\cos(\theta) = - 1$$, where in
+so the real part of $$\gamma$$ is largest when $$\cos(\theta) = - 1$$, for which 
 $$\gamma = \frac{1}{1 - f}$$, and smallest when $$\cos(\theta) = 1$$, where
 $$\gamma = \frac{1}{1+f}$$. The average of these extremal values is the real
 number $$c = \frac{1}{1 -f^2}$$, which we now show is equidistant from all
@@ -166,7 +165,7 @@ complex plane. Since Möbius transformations [preserve "generalized
 circles"](https://en.wikipedia.org/wiki/M%C3%B6bius_transformation#Preservation_of_angles_and_generalized_circles),
 it follows that the image of the circle $$\theta \mapsto e^{i\theta}$$ under
 $$\gamma$$ is either a circle or a line. Since $$\gamma$$ clearly isn't a line
-(since e.g., $$\gamma(\pi/2) = 0 + \frac{f}{f^2 + 1}\cdot i$$ is not colinear with the
+(see that e.g., $$\gamma(\pi/2) = 0 + \frac{f}{f^2 + 1}\cdot i$$ is not colinear with the
 real numbers $$\gamma(0) = \frac{1}{f^2-1}$$ and $$\gamma(\pi) =
 \frac{1}{f^2+1}$$), we can conclude that the image of $$\gamma$$ must be a
 circle.
