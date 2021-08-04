@@ -116,7 +116,7 @@ $$
 $$
 
 Here, I have used the expression for the sum of a convergent geometric series on
-the third line, and on the last line, I have used WolframAlpha (since I was
+the fourth line, and on the last line, I have used WolframAlpha (since I was
 feeling lazy 🙂). This last formula is harder to work with than the formula on
 the second to last line, so we'll mostly focus on the penultimate formula. On
 the other hand, the last formula does provide some useful insight, as well as
