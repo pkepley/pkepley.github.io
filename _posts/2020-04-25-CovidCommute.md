@@ -3,7 +3,7 @@ layout: post
 published: true
 title: Covid Commute
 subtitle: Animating my location history
-tag: [animation, GeoPandas]
+tag: [animation, GeoPandas, GPS]
 ---
 
 The global pandemic has severely reduced peoples' mobility world-wide, as regional and national lock-downs and stay-at-home orders have gone into effect. In this post, I'll animate the impact that covid-19 has had on my daily commute/movements using my [Google Location History](https://support.google.com/accounts/answer/3118687?hl=en) data. Because I'm lucky enough to have a job that enabled me to work from home, and because my employer was proactive in putting us on work-from-home, I haven't really been moving around much since mid March. As a result, the animation will get pretty boring around that point. &#128578;
