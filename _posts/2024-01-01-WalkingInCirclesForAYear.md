@@ -20,7 +20,7 @@ While Strava's free tier provides some useful tracking features, I quickly start
 Admittedly, if I hadn't invested the time into building tools... I likely would have gotten bored of the walking and fizzled out early on in the year.
 One of the core features of my activity tracker (which was probably the most motivating feature) was an animation that allowed me to simultaneously see all of the walks I had taken, which I've exported and posted below:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9i1UzYBNLJ0?si=iaq2e6dlwLO7T7hp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9i1UzYBNLJ0?si=iaq2e6dlwLO7T7hp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="max-width:100%;"></iframe>
 
 In the above animation, you can see me walking around my local walking path on 245 separate occasions. 
 
